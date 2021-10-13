@@ -1,0 +1,25 @@
+body {
+    background-color: #2C2C34;
+}
+
+a {
+    color: #c477d4;
+}
+
+div {
+    font-family:Source Code Pro;
+    color: #D8D8F6;
+    padding: 10px;
+    margin-top: 20px;
+    display: block;
+}
+
+.basic {
+    background-color: #494850;
+}
+
+.title {
+    background-color: #3D8F8C;
+    font-weight: bold;
+    font-size: 40px;
+}
