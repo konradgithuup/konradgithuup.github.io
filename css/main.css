@@ -1,11 +1,11 @@
 @font-face {
     font-family: rubik;
-    src: url("../resources/fonts/rubik.ttf");
+    src: url("resources/fonts/rubik.ttf");
 }
 
 @font-face {
     font-family: oxanium;
-    src: url("../resources/fonts/oxanium.ttf");
+    src: url("resources/fonts/oxanium.ttf");
 }
 
 :root {
@@ -87,7 +87,7 @@ body {
     width: 100%;
     height: max-content;
 
-    background-image: url("../resources/stars.jpg");
+    background-image: url("resources/stars.jpg");
     background-size: auto;
 }
 
