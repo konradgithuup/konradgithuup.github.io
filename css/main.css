@@ -1,25 +1,270 @@
+@font-face {
+    font-family: rubik;
+    src: url("../resources/fonts/rubik.ttf");
+}
+
+@font-face {
+    font-family: oxanium;
+    src: url("../resources/fonts/oxanium.ttf");
+}
+
+:root {
+    --text-color: rgb(180, 180, 180);
+    --title-color: rgb(230, 230, 230);
+    --bg-color: rgb(12, 12, 12);
+    --bg-color2: rgb(0, 0, 0);
+    --highlight-color-purple: rgb(206, 115, 255);
+    --highlight-color-purple-hover: rgb(238, 207, 255);
+    --highlight-color-used: rgb(161, 64, 213);
+    --regular-font: rubik;
+    --special-font: oxanium
+}
+
+* {
+    line-height: 180%;
+    margin: 0;
+    padding: 0;
+    font-family: var(--regular-font);
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--special-font);
+    font-weight: 200;
+    color: var(--title-color);
+}
+
 body {
-    background-color: #2C2C34;
+    display: block;
+    background-color: var(--bg-color2);
+}
+
+.lblock {
+    position: sticky;
+    text-align: left;
+    padding-left: 10%;
+    padding-bottom: 10%;
+    opacity: 0;
+
+    animation-name: blendIn;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.rblock {
+    position: sticky;
+    text-align: right;
+    padding-right: 10%;
+    padding-bottom: 10%;
+    opacity: 0;
+
+    animation-name: blendIn;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.profile-picture {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 5px;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.content-wrap {
+    position: absolute;
+    width: 100%;
+    height: max-content;
+
+    background-image: url("../resources/stars.jpg");
+    background-size: auto;
+}
+
+.shadow {
+    display: inline-block;
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    background: radial-gradient(circle at center, var(--title-color) 60%, rgba(0, 0, 0, 0) 65%);
+}
+
+.name {
+    font-family: var(--special-font);
+    font-weight: 100;
+    font-size: 400%;
+    color: var(--title-color);
+}
+
+b {
+    font-family: inherit;
+    color: inherit;
 }
 
 a {
-    color: #c477d4;
+    color: var(--highlight-color-purple);
+    text-decoration: none;
 }
 
-div {
-    font-family:Source Code Pro;
-    color: #D8D8F6;
-    padding: 10px;
-    margin-top: 20px;
-    display: block;
+a:hover {
+    color: var(--highlight-color-purple-hover);
+    font-weight: 600;
 }
 
-.basic {
-    background-color: #494850;
+a:visited {
+    color: var(--highlight-color-used);
 }
 
-.title {
-    background-color: #3D8F8C;
-    font-weight: bold;
-    font-size: 40px;
+.footer {
+    position: relative;
+    text-align: center;
+    font-size: larger;
+    bottom: -90%;
+    height: 2.5rem;
+}
+
+.landing-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), var(--bg-color2)), url("../resources/PIA19948.jpg");
+    min-height: 50%;
+    height: 550px;
+
+    box-sizing: border-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+
+    opacity: 0;
+
+    animation-name: blendIn;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.footer-image {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 70%, var(--bg-color2) 80%), url("../resources/earth.jpg");
+    height: 500px;
+
+    box-sizing: border-box;
+
+    opacity: 0;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+
+    animation-name: blendIn;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+ul {
+    list-style-type: none;
+}
+
+@keyframes blendIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate(0%, 40%);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.top-shift {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+
+    pointer-events: none;
+    mix-blend-mode: overlay;
+
+    width: 100%;
+    height: 10%;
+    background: linear-gradient(rgb(108, 108, 255), transparent);
+
+    opacity: 0;
+
+    animation-name: blendIn;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.bottom-shift {
+    position: fixed;
+    top: 90%;
+    left: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+
+    pointer-events: none;
+    mix-blend-mode: overlay;
+
+    width: 100%;
+    height: 10%;
+    background: linear-gradient(transparent, rgb(255, 108, 108));
+
+    opacity: 0;
+
+    animation-name: blendIn;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.landing-text {
+    text-align: center;
+    position: relative;
+    transform: translate(0%, 50%);
+    box-sizing: border-box;
+    height: 100%;
+
+
+    opacity: 0;
+
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
