@@ -1,0 +1,20 @@
+[
+    {
+        "timespan": "2024",
+        "projects": [
+            {
+                "id": 752825528,
+                "description": "A collection of I/O backends for the JULEA storage framework making use of the C-Rust interoperability."
+            }
+        ]
+    },
+    {
+        "timespan": "2021-2022",
+        "projects": [
+            {
+                "id": 408923901,
+                "description": "An extension for the chat app Discord. It uses the Bungie API to allow users to look up hidden item information for the video game Destiny 2."
+            }
+        ]
+    }
+]
